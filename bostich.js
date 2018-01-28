@@ -1,17 +1,21 @@
+'use strict'
+
 const fs = require('fs')
 
 /**
- * Jolitron's parser is pretty slow, so I created a wrapper to use the native JSON parser
- * if we did parse the input data once already.
+ * Jolitron's parser is pretty awesome, but I found it slow, so I created 
+ * a wrapper to export the file in JSON format and use the native JSON parser
+ * if we did parse the input data once already. This makes it lightspeed.
  * @param {String} inputFilePath - source of the inpuit file
  * @param {Jolicitron} parser - constructed parser to feed the raw file data with and creates a JSON object
  * @param {Boolean} [forceParse] - to re-parse even if cache exists
  */
-exports.bostich = function (inputFilePath, parser, forceParse) {
+module.exports = function (inputFilePath, parser, forceParse) {
     let fileNameWithoutExtension = inputFilePath.indexOf('.') > -1 ?
             inputFilePath.substr(0, inputFilePath.lastIndexOf('.') - 1) : inputFilePath,
-        cacheFileName = fileNameWithoutExtension + '.cache.json'
-        data
+        cacheFileName = fileNameWithoutExtension + '.cache.json',
+        data,
+        parsingStart = new Date()
     try {
         if (forceParse === true) {
             throw new Error('Just go an parse...')
