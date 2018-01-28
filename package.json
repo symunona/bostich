@@ -1,0 +1,12 @@
+{
+  "name": "bostich",
+  "version": "1.0.0",
+  "description": "Simple hashcode input parser and cacher.",
+  "main": "bostich.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Symunona",
+  "license": "ISC",
+  "dependencies": {}
+}
