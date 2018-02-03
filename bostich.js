@@ -12,10 +12,10 @@ const fs = require('fs')
  */
 module.exports = function (inputFilePath, parser, forceParse) {
     let fileNameWithoutExtension = inputFilePath.indexOf('.') > -1 ?
-            inputFilePath.substr(0, inputFilePath.lastIndexOf('.') - 1) : inputFilePath,
+            inputFilePath.substr(0, inputFilePath.lastIndexOf('.')) : inputFilePath,
         cacheFileName = fileNameWithoutExtension + '.cache.json',
         data,
-        parsingStart = new Date()
+        parsingStart = new Date()        
     try {
         if (forceParse === true) {
             throw new Error('Just go an parse...')

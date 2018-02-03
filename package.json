@@ -1,6 +1,6 @@
 {
   "name": "bostich",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Simple hashcode input parser and cacher.",
   "main": "bostich.js",
   "scripts": {
