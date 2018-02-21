@@ -17,7 +17,7 @@ module.exports = function (inputFilePath, parser, forceParse) {
         data,
         parsingStart = new Date()        
     try {
-        if (forceParse === true) {
+        if (forceParse) {
             throw new Error('Just go an parse...')
         }
         data = JSON.parse(fs.readFileSync(cacheFileName, 'utf8'))
